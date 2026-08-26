@@ -10,9 +10,20 @@ The exporter captures what Collectr has loaded on the page at the time you expor
 
 If you want to export your whole collection, scroll down through the page first so Collectr can load the rest of your products. Then use **Export as HTML**, **Export as PDF**, or the matching buttons added to the page.
 
+## Installation
+
+1. Download or clone this repository to your computer.
+2. Open Chrome and go to `chrome://extensions`.
+3. Turn on **Developer mode** in the top-right corner.
+4. Click **Load unpacked**.
+5. Select the `CollectrExporter` folder containing `manifest.json`.
+6. Open your Collectr products page and refresh it.
+
+When you change the extension files, return to `chrome://extensions`, click **Reload** on Collectr Exporter, and refresh the Collectr page.
+
 ## Usage
 
-1. Open your Collectr porfolio/products page.
+1. Open your Collectr portfolio/products page.
 2. Scroll down until the products you want are loaded.
 3. Open the extension popup or use the buttons added beside Collectr's export button.
 4. Choose HTML or PDF.
