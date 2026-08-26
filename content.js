@@ -293,28 +293,6 @@ function buildExportHtmlFromNode(node) {
     .grid {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
-
-      > li {
-        border-color: var(--color-gray-200, currentcolor);
-      }
-      .bg-card {
-        background-color: var(--card);
-      }
-      .underline {
-        text-decoration-line: underline;
-      }
-      .text-muted-foreground, .text-muted-foreground\/15 {
-        color: var(--muted-foreground);
-      }
-      .text-foreground, .text-foreground\/90 {
-        color: var(--foreground);
-      }
-      .text-card-foreground {
-          color: var(--card-foreground);
-      }
-      .dark\:text-green-500:where(.dark *,.navyTeal *,.darkGreenTeal *,.darkBlue *,.darkPurple *,.darkYellow *,.navyBlue *,.navyPurple *,.navyYellow *,.darkGreenYellow *,.darkGreenPurple *,.darkGreenBlue *) {
-        color: var(--color-green-500);
-      }
     }
     .contents {
       display: contents;
@@ -324,21 +302,6 @@ function buildExportHtmlFromNode(node) {
     }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              collectrBg: 'oklch(20.5% 0 0)',
-              collectrCard: 'oklch(20.5% 0 0)',
-              collectrBorder: 'oklch(32.5% 0 0)',
-              collectrDanger: 'oklch(70.4% .191 22.216)',
-              collectrSuccess: 'oklch(72.3% .219 149.579)'
-            }
-          }
-        }
-      }
-    </script>
   `;
 
   return `<!doctype html><html><head><meta charset="utf-8" /><title>Collectr Product Grid</title>${css}</head><body>${wrapper.outerHTML}</body></html>`;
