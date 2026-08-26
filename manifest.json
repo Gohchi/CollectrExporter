@@ -5,6 +5,7 @@
   "description": "Export the Collectr products grid as HTML or PDF.",
   "permissions": [
     "activeTab",
+    "downloads",
     "storage",
     "scripting"
   ],
@@ -17,7 +18,8 @@
         "https://app.getcollectr.com/portfolio/products*"
       ],
       "js": [
-        "content.js"
+        "content.js",
+        "custombutton.js"
       ],
       "run_at": "document_idle"
     }
@@ -35,5 +37,9 @@
     "16": "favicon.png",
     "48": "favicon.png",
     "128": "favicon.png"
+  },
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
   }
 }
