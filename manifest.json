@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Collectr Exporter",
+  "version": "1.0.0",
+  "description": "Export the Collectr products grid as HTML or PDF.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://app.getcollectr.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://app.getcollectr.com/portfolio/products*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Collectr Exporter",
+    "default_popup": "popup.html"
+  }
+}

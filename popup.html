@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' data:; connect-src https://app.getcollectr.com;" />
+    <title>Collectr Exporter</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Collectr Exporter</h1>
+      </div>
+
+      <p id="status" class="status">Checking page…</p>
+
+      <div class="actions">
+        <button id="download-html" class="primary">Export as HTML</button>
+        <button id="export-pdf">Export as PDF</button>
+      </div>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
