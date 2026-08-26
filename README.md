@@ -4,6 +4,12 @@ A Chrome extension for exporting the Collectr products currently visible on the 
 
 ![Collectr Exporter preview](preview.png)
 
+## About
+
+[Collectr](https://app.getcollectr.com) is a portfolio and collection tracker for collectible products. I created this extension because I wanted a simple way to take the collection view from Collectr with me as a standalone HTML file or a printable PDF.
+
+It adds export controls to the Collectr products page while keeping the original page workflow intact. The export reflects the products that Collectr has loaded, which makes it useful for saving, sharing, or printing a snapshot of a collection.
+
 ## Important
 
 The exporter captures what Collectr has loaded on the page at the time you export.
