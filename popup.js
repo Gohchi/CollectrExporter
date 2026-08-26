@@ -414,7 +414,7 @@ async function extractGridFromTab(tabId) {
 
       const favicon = '<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHdpZHRoPSI4MDBweCIgaGVpZ2h0PSI4MDBweCIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgY2xhc3M9Imljb24iICB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE3MS41NDc5MTIgODcxLjY5MDIzMWw5MS42MjU1NDEtODcxLjc1ODc4OSA2MTQuNDYxNjQ1IDY0LjU4MjUyMS05MS42MjU1NDEgODcxLjc1ODc4OS02MTQuNDYxNjQ1LTY0LjU4MjUyMVoiIGZpbGw9IiMyQjZCQkYiIC8+PHBhdGggZD0iTTE4NC40MDc1MjggMTAyLjAyMTM0M2g1NTcuODc0NzM3YTQzLjkzMjYzNiA0My45MzI2MzYgMCAwIDEgNDYuMDI0NjY2IDQxLjE0MzI2MXY4MzYuODEyMTA2YTQzLjkzMjYzNiA0My45MzI2MzYgMCAwIDEtNDMuMjM1MjkyIDQzLjkzMjYzNWgtNTU3Ljg3NDczN0E0My4yMzUyOTIgNDMuMjM1MjkyIDAgMCAxIDE0MS4xNzIyMzYgOTc5Ljk3NjcxVjE0My4xNjQ2MDRhNDMuMjM1MjkyIDQzLjIzNTI5MiAwIDAgMSA0My4yMzUyOTItNDEuMTQzMjYxeiIgZmlsbD0iIzVEOUNFQyIgLz48cGF0aCBkPSJNNDY0LjczOTU4MyA2OTUuNDYwNTk0aC03LjY3MDc3N2MtOS4wNjU0NjQtNi4yNzYwOTEtMzAuNjgzMTExLTIwLjkyMDMwMy00NC42Mjk5NzktMzIuMDc3Nzk3LTUyLjMwMDc1Ny00MS4xNDMyNjItODAuMTk0NDkzLTY5LjczNDM0Mi04NS4wNzU4OTgtOTIuNzQ2Njc1YTg1LjA3NTg5NyA4NS4wNzU4OTcgMCAwIDEtNC4xODQwNi0yNS4xMDQzNjRBODcuMTY3OTI4IDg3LjE2NzkyOCAwIDAgMSAzNTAuMzc1MjYyIDQ3OS4yODQxMzNhNzMuOTE4NDAzIDczLjkxODQwMyAwIDAgMSA1Mi4zMDA3NTctMjIuMzE0OTg5IDc3LjQwNTEyIDc3LjQwNTEyIDAgMCAxIDYyLjA2MzU2NCAzMC42ODMxMSA3Ni43MDc3NzYgNzYuNzA3Nzc2IDAgMCAxIDYxLjM2NjIyMS0zMi4wNzc3OTcgODAuODkxODM3IDgwLjg5MTgzNyAwIDAgMSA3Ni4wMTA0MzMgODIuMjg2NTI0IDg3LjE2NzkyOCA4Ny4xNjc5MjggMCAwIDEtMy40ODY3MTcgMjMuNzA5Njc2Yy00LjE4NDA2MSAyMC45MjAzMDMtMzIuMDc3Nzk3IDUyLjk5ODEtODIuMjg2NTIzIDk0LjE0MTM2MmE1MjIuMzEwMjIyIDUyMi4zMTAyMjIgMCAwIDEtNDguMTE2Njk3IDM2LjI2MTg1OCIgZmlsbD0iI0U2RTlFRCIgLz48L3N2Zz4=">';
 
-      return `<!doctype html><html><head><meta charset="utf-8" /><title>Collectr Product Grid</title>${favicon}${css}</head><body>${clone.outerHTML}</body></html>`;
+      return `<!doctype html><html><head><meta charset="utf-8" /><title>Collectr Portfolio</title>${favicon}${css}</head><body>${clone.outerHTML}</body></html>`;
     }
   });
 
@@ -469,7 +469,7 @@ function escapeHtml(str) {
 
 function buildDownloadFilename() {
   const date = new Date();
-  return `collectr-products-${date.toISOString().slice(0, 10)}.html`;
+  return `collectr-portfolio-${date.toISOString().slice(0, 10)}.html`;
 }
 
 function downloadHtml(exportHtml) {
