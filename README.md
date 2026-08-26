@@ -2,6 +2,8 @@
 
 A Chrome extension for exporting the Collectr products currently visible on the page as HTML or PDF.
 
+![Collectr Exporter preview](preview.png)
+
 ## Important
 
 The exporter captures what Collectr has loaded on the page at the time you export.
