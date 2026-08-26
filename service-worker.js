@@ -5,6 +5,23 @@ function buildDownloadFilename() {
   return `collectr-portfolio-${date.toISOString().slice(0, 10)}.html`;
 }
 
+function printExportHtml(exportHtml) {
+  const printWindow = window.open('', '_blank', 'width=1200,height=900');
+
+  if (!printWindow) {
+    throw new Error('The print popup was blocked. Please allow popups and try again.');
+  }
+
+  printWindow.document.open();
+  printWindow.document.write(exportHtml);
+  printWindow.document.close();
+
+  printWindow.addEventListener('load', () => {
+    printWindow.focus();
+    printWindow.print();
+  }, { once: true });
+}
+
 function createExportHtmlFromPage() {
   const selectors = ['div[class*="grid"]:has(img)'];
   const candidates = [];
@@ -431,14 +448,36 @@ async function downloadHtmlFromActiveTab() {
   });
 }
 
+async function printPdfFromActiveTab() {
+  const html = await exportGridFromActiveTab();
+  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+
+  if (!tab || !tab.id) {
+    throw new Error('No active tab found.');
+  }
+
+  await chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    func: printExportHtml,
+    args: [html]
+  });
+}
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (message?.action !== 'downloadHtml') {
+  if (!['downloadHtml', 'printPdf'].includes(message?.action)) {
     return;
   }
 
-  downloadHtmlFromActiveTab()
+  const exportAction = message.action === 'printPdf'
+    ? printPdfFromActiveTab
+    : downloadHtmlFromActiveTab;
+
+  exportAction()
     .then(() => sendResponse({ ok: true }))
-    .catch((error) => sendResponse({ ok: false, error: error.message || 'Unable to export grid.' }));
+    .catch((error) => sendResponse({
+      ok: false,
+      error: error.message || 'Unable to export grid.'
+    }));
 
   return true;
 });

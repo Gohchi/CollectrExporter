@@ -38,5 +38,5 @@ htmlButton.addEventListener('click', () => {
 });
 
 pdfButton.addEventListener('click', () => {
-  setStatus('PDF export is not available yet.', true);
+  sendDownloadMessage('printPdf');
 });
